@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4C14C4E4-45B4-4C84-B3A8-2582D0CBF92F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrelloX.Application", "src\TrelloX.Application\TrelloX.Application.csproj", "{E4E3EA84-558C-4C88-8C9B-A20783D5CB5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrelloX.Domain", "src\TrelloX.Domain\TrelloX.Domain.csproj", "{4449E5AB-975E-453C-A982-083D8203F15A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrelloX.Infrastructure", "src\TrelloX.Infrastructure\TrelloX.Infrastructure.csproj", "{CC49ACFD-8598-439F-AE93-F156EFEFF705}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrelloX.WebApi", "src\TrelloX.WebApi\TrelloX.WebApi.csproj", "{E4FAA8F0-C838-43B4-BE17-DDDEEA6FFCF3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E4E3EA84-558C-4C88-8C9B-A20783D5CB5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4E3EA84-558C-4C88-8C9B-A20783D5CB5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4E3EA84-558C-4C88-8C9B-A20783D5CB5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4E3EA84-558C-4C88-8C9B-A20783D5CB5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4449E5AB-975E-453C-A982-083D8203F15A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4449E5AB-975E-453C-A982-083D8203F15A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4449E5AB-975E-453C-A982-083D8203F15A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4449E5AB-975E-453C-A982-083D8203F15A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC49ACFD-8598-439F-AE93-F156EFEFF705}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC49ACFD-8598-439F-AE93-F156EFEFF705}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC49ACFD-8598-439F-AE93-F156EFEFF705}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC49ACFD-8598-439F-AE93-F156EFEFF705}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4FAA8F0-C838-43B4-BE17-DDDEEA6FFCF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4FAA8F0-C838-43B4-BE17-DDDEEA6FFCF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4FAA8F0-C838-43B4-BE17-DDDEEA6FFCF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4FAA8F0-C838-43B4-BE17-DDDEEA6FFCF3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E4E3EA84-558C-4C88-8C9B-A20783D5CB5A} = {4C14C4E4-45B4-4C84-B3A8-2582D0CBF92F}
+		{4449E5AB-975E-453C-A982-083D8203F15A} = {4C14C4E4-45B4-4C84-B3A8-2582D0CBF92F}
+		{CC49ACFD-8598-439F-AE93-F156EFEFF705} = {4C14C4E4-45B4-4C84-B3A8-2582D0CBF92F}
+		{E4FAA8F0-C838-43B4-BE17-DDDEEA6FFCF3} = {4C14C4E4-45B4-4C84-B3A8-2582D0CBF92F}
+	EndGlobalSection
+EndGlobal
