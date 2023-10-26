@@ -6,6 +6,8 @@ public sealed class Comment : BaseEntity
 {
     public string Text { get; set; } = string.Empty;
     public DateTime CreationDate { get; set; } = DateTime.Now;
-    public User UserId { get; set; } = null!;
-    public Task TaskId { get; set; } = null!;
+    public Guid UserId { get; set; }
+    public Guid TaskId { get; set; }
+    public User User { get; set; } = null!;
+    public Task Task { get; set; } = null!;
 }

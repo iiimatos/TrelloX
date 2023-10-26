@@ -3,13 +3,15 @@ using Serilog;
 using TrelloX.Application;
 using TrelloX.Infrastructure;
 using TrelloX.WebApi;
+using TrelloX.WebApi.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 {
     builder.Services
-        .AddApplication()
-        .AddInfrastructure()
-        .AddWebApi();
+        .AddPresentation()
+        .AddInfrastructure(builder.Configuration)
+        .AddApplication();
+
     builder.Host.UseSerilog((context, configuration) =>
         configuration.ReadFrom.Configuration(context.Configuration));
 }
@@ -20,6 +22,7 @@ var app = builder.Build();
     {
         app.UseSwagger();
         app.UseSwaggerUI();
+        app.ApplyMigrations();
     }
     app.UseSerilogRequestLogging();
     app.UseAuthorization();
