@@ -1,3 +1,7 @@
+using Microsoft.AspNetCore.Mvc.Infrastructure;
+
+using TrelloX.WebApi.Common.Errors;
+
 namespace TrelloX.WebApi;
 
 public static class DependencyInjection
@@ -7,6 +11,7 @@ public static class DependencyInjection
         services.AddControllers();
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen();
+        services.AddSingleton<ProblemDetailsFactory, TrelloXProblemDetailsFactory>();
         return services;
     }
 }
