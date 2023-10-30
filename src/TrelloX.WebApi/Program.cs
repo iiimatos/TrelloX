@@ -24,6 +24,7 @@ var app = builder.Build();
         app.UseSwaggerUI();
         app.ApplyMigrations();
     }
+    app.UseExceptionHandler("/error");
     app.UseSerilogRequestLogging();
     app.UseAuthorization();
     app.MapControllers();
