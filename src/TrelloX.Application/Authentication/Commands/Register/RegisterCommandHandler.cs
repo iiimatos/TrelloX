@@ -11,19 +11,19 @@ namespace TrelloX.Application.Authentication.Commands.Register;
 public sealed class RegisterCommandHandler : IRequestHandler<RegisterCommand, ErrorOr<AuthenticationResult>>
 {
     private readonly IJwtTokenGenerator _jwtTokenGenerator;
-    private readonly IUserRepository _userRepository;
+    private readonly IUnitOfWork _unitOfWork;
 
-    public RegisterCommandHandler(IJwtTokenGenerator jwtTokenGenerator, IUserRepository userRepository)
+    public RegisterCommandHandler(IJwtTokenGenerator jwtTokenGenerator, IUnitOfWork unitOfWork)
     {
         _jwtTokenGenerator = jwtTokenGenerator ?? throw new ArgumentException(nameof(jwtTokenGenerator));
-        _userRepository = userRepository;
+        _unitOfWork = unitOfWork ?? throw new ArgumentException(nameof(unitOfWork));
     }
 
     public async Task<ErrorOr<AuthenticationResult>> Handle(RegisterCommand command, CancellationToken cancellationToken)
     {
         await System.Threading.Tasks.Task.CompletedTask;
 
-        if (_userRepository.GetUserByEmail(command.Email) is not null)
+        if (await _unitOfWork.UserRepository.GetUserByEmail(command.Email) is not null)
         {
             return Errors.User.DuplicateEmail;
         }
@@ -35,7 +35,8 @@ public sealed class RegisterCommandHandler : IRequestHandler<RegisterCommand, Er
             command.Password
         );
 
-        _userRepository.Add(user);
+        await _unitOfWork.UserRepository.InsertAsync(user);
+        await _unitOfWork.CompletedTaskAsync();
 
         var token = _jwtTokenGenerator.GenerateToken(user);
 

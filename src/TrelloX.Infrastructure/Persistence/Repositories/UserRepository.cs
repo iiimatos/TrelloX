@@ -1,19 +1,16 @@
+using Microsoft.EntityFrameworkCore;
+
 using TrelloX.Application.Common.Interfaces.Persistence;
 using TrelloX.Domain.Entities;
 
 namespace TrelloX.Infrastructure.Persistence.Repositories;
 
-public class UserRepository : IUserRepository
+public class UserRepository : BaseRepository<User>, IUserRepository
 {
-    private static readonly List<User> _users = new();
+	public UserRepository(ApplicationDbContext context) : base(context) { }
 
-    public void Add(User user)
+    public async Task<User?> GetUserByEmail(string email)
     {
-        _users.Add(user);
-    }
-
-    public User? GetUserByEmail(string email)
-    {
-        return _users.SingleOrDefault(u => u.Email == email);
+        return await _entities.SingleOrDefaultAsync(u => u.Email == email);
     }
 }

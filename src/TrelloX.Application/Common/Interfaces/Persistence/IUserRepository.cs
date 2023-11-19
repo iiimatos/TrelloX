@@ -2,8 +2,7 @@ using TrelloX.Domain.Entities;
 
 namespace TrelloX.Application.Common.Interfaces.Persistence;
 
-public interface IUserRepository
+public interface IUserRepository : IBaseRepository<User>
 {
-    User? GetUserByEmail(string email);
-    void Add(User user);
+  Task<User?> GetUserByEmail(string email);
 }
